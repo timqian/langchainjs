@@ -14,6 +14,7 @@ import {
 } from "./handlers/initialize.js";
 import { getBufferString } from "../memory/base.js";
 import { getEnvironmentVariable } from "../util/env.js";
+import { Serialized } from "../schema/load.js";
 
 type BaseCallbackManagerMethods = {
   [K in keyof CallbackHandlerMethods]?: (
@@ -282,7 +283,7 @@ export class CallbackManager
   }
 
   async handleLLMStart(
-    llm: { name: string },
+    llm: Serialized,
     prompts: string[],
     runId: string = uuidv4(),
     _parentRunId: string | undefined = undefined,
@@ -316,7 +317,7 @@ export class CallbackManager
   }
 
   async handleChatModelStart(
-    llm: { name: string },
+    llm: Serialized,
     messages: BaseChatMessage[][],
     runId: string = uuidv4(),
     _parentRunId: string | undefined = undefined,
@@ -362,7 +363,7 @@ export class CallbackManager
   }
 
   async handleChainStart(
-    chain: { name: string },
+    chain: Serialized,
     inputs: ChainValues,
     runId = uuidv4()
   ): Promise<CallbackManagerForChainRun> {
@@ -393,7 +394,7 @@ export class CallbackManager
   }
 
   async handleToolStart(
-    tool: { name: string },
+    tool: Serialized,
     input: string,
     runId = uuidv4()
   ): Promise<CallbackManagerForToolRun> {
