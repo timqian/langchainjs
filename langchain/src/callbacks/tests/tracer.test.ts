@@ -37,6 +37,16 @@ test("Test LLMRun", async () => {
     execution_order: 1,
     child_execution_order: 1,
     serialized: { name: "test" },
+    events: [
+      {
+        name: "start",
+        time: 1620000000000,
+      },
+      {
+        name: "end",
+        time: 1620000000000,
+      },
+    ],
     inputs: { prompts: ["test"] },
     run_type: "llm",
     outputs: { generations: [] },
@@ -62,6 +72,16 @@ test("Test Chat Message Run", async () => {
       "child_execution_order": 1,
       "child_runs": [],
       "end_time": 1620000000000,
+      "events": [
+        {
+          "name": "start",
+          "time": 1620000000000,
+        },
+        {
+          "name": "end",
+          "time": 1620000000000,
+        },
+      ],
       "execution_order": 1,
       "extra": undefined,
       "id": Any<String>,
@@ -112,6 +132,16 @@ test("Test Chain Run", async () => {
     execution_order: 1,
     child_execution_order: 1,
     serialized: { name: "test" },
+    events: [
+      {
+        name: "start",
+        time: 1620000000000,
+      },
+      {
+        name: "end",
+        time: 1620000000000,
+      },
+    ],
     inputs: { foo: "bar" },
     outputs: { foo: "bar" },
     run_type: "chain",
@@ -135,6 +165,16 @@ test("Test Tool Run", async () => {
     execution_order: 1,
     child_execution_order: 1,
     serialized: { name: "test" },
+    events: [
+      {
+        name: "start",
+        time: 1620000000000,
+      },
+      {
+        name: "end",
+        time: 1620000000000,
+      },
+    ],
     inputs: { input: "test" },
     outputs: { output: "output" },
     run_type: "tool",
@@ -197,6 +237,16 @@ test("Test nested runs", async () => {
             serialized: {
               name: "test_llm_child_run",
             },
+            events: [
+              {
+                name: "start",
+                time: 1620000000000,
+              },
+              {
+                name: "end",
+                time: 1620000000000,
+              },
+            ],
             start_time: 1620000000000,
             run_type: "llm",
             child_runs: [],
@@ -209,6 +259,16 @@ test("Test nested runs", async () => {
         serialized: {
           name: "test_tool",
         },
+        events: [
+          {
+            name: "start",
+            time: 1620000000000,
+          },
+          {
+            name: "end",
+            time: 1620000000000,
+          },
+        ],
         start_time: 1620000000000,
         inputs: { input: "test" },
         run_type: "tool",
@@ -227,6 +287,16 @@ test("Test nested runs", async () => {
         serialized: {
           name: "test_llm2",
         },
+        events: [
+          {
+            name: "start",
+            time: 1620000000000,
+          },
+          {
+            name: "end",
+            time: 1620000000000,
+          },
+        ],
         start_time: 1620000000000,
         run_type: "llm",
         child_runs: [],
@@ -245,6 +315,16 @@ test("Test nested runs", async () => {
     serialized: {
       name: "test2",
     },
+    events: [
+      {
+        name: "start",
+        time: 1620000000000,
+      },
+      {
+        name: "end",
+        time: 1620000000000,
+      },
+    ],
     name: "test2",
     start_time: 1620000000000,
     run_type: "chain",

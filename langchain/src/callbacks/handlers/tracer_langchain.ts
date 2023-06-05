@@ -16,6 +16,7 @@ export interface RunUpdate {
   end_time?: number;
   error?: string;
   outputs?: RunOutputs;
+  events: BaseRun["events"];
   parent_run_id?: string; // uuid
   reference_example_id?: string; // uuid
 }
@@ -86,6 +87,7 @@ export class LangChainTracer
       parent_run_id: run.parent_run_id,
       execution_order: run.execution_order,
       serialized: run.serialized,
+      events: run.events,
       error: run.error,
       inputs: run.inputs,
       outputs: run.outputs ?? {},
@@ -124,6 +126,7 @@ export class LangChainTracer
       end_time: run.end_time,
       error: run.error,
       outputs: run.outputs,
+      events: run.events,
       parent_run_id: run.parent_run_id,
       reference_example_id: run.reference_example_id,
     };
