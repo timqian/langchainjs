@@ -14,7 +14,7 @@ import {
 } from "./handlers/initialize.js";
 import { getBufferString } from "../memory/base.js";
 import { getEnvironmentVariable } from "../util/env.js";
-import { Serialized } from "../schema/load.js";
+import { Serialized } from "../load/serializable.js";
 
 type BaseCallbackManagerMethods = {
   [K in keyof CallbackHandlerMethods]?: (
