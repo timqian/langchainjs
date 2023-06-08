@@ -1,6 +1,6 @@
 import { Example, Run } from "langchainplus-sdk";
 import { EvaluationResult } from "langchainplus-sdk/evaluation";
-import { CRITERIA_PROMPT } from "./prompt.js";
+import { CRITERIA_PROMPT } from "./criteria_prompt.js";
 import {
   RunEvaluatorInputMapper,
   RunEvaluatorChain,
